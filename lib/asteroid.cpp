@@ -11,6 +11,7 @@ std::vector<Asteroid> asteroids;
 
 
 void drawAsteroidCircle(float centerX, float centerY, float radius, int numPoints, float bumpiness) {
+    //function to draw circle, harder than expected
     glBegin(GL_POLYGON);
     for (int i = 0; i < numPoints; ++i) {
         float angle = 2.0 * 3.141592 * i / numPoints;
@@ -22,6 +23,7 @@ void drawAsteroidCircle(float centerX, float centerY, float radius, int numPoint
 }
 
 void drawAsteroids() {
+    //create asteroids here
     glColor3f(0.4, 0.4, 0.4);
     for (const auto& asteroid : asteroids) {
         glPushMatrix();
@@ -46,6 +48,7 @@ void drawAsteroids() {
 }
 
 void updateAsteroids(int value) {
+    //updaye asteroids here
     score += 1;
     for (auto& asteroid : asteroids) {
         asteroid.y -= asteroid.speed;

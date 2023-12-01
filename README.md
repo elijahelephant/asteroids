@@ -29,7 +29,7 @@ Elijah Williams, Liam Ronarch, Ran Chen, Tyler Canepa
 ### How It Works
 - Ship is created in our ``drawPlayer()`` function
 - ``Keyboard()`` and ``specialKeys()`` functions are used to process user inputs from the keyboard
-- ``drawAsteroids`` is where we draw the asteroids that fall from the sky
+- ``drawAsteroids()``  and ``drawasteroidcircle()`` is where we draw the asteroids that fall from the sky
 - There are a few other smaller functions which are self names and should be easy to understand
 
 
