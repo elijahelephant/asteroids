@@ -24,13 +24,13 @@ Elijah Williams, Liam Ronarch, Ran Chen, Tyler Canepa
 
 ## How It Works And What It Is
 
-- This is our own version of the popular game asteroids.
+- This is our own version of the popular game asteroids. Press left, right, up, and down arrows to avoid falling asteroids in order to get the highest score. If you collide with an asteroid your game will end.
 
 ### How It Works
 - Ship is created in our ``drawPlayer()`` function
 - ``Keyboard()`` and ``specialKeys()`` functions are used to process user inputs from the keyboard
 - ``drawAsteroids`` is where we draw the asteroids that fall from the sky
-- 
+- There are a few other smaller functions which are self names and should be easy to understand
 
 
 
