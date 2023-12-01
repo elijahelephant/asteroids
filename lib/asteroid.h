@@ -1,0 +1,1 @@
+//implement asteroid class here
