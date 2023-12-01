@@ -26,6 +26,14 @@ Elijah Williams, Liam Ronarch, Ran Chen, Tyler Canepa
 
 - This is our own version of the popular game asteroids.
 
+### How It Works
+- Ship is created in our ``drawPlayer()`` function
+- ``Keyboard()`` and ``specialKeys()`` functions are used to process user inputs from the keyboard
+- ``drawAsteroids`` is where we draw the asteroids that fall from the sky
+- 
+
+
+
 
 ## How To Compile And Run
 
@@ -33,6 +41,7 @@ Elijah Williams, Liam Ronarch, Ran Chen, Tyler Canepa
 ```g++ main.cpp -lGL -lglut```
 - That should create an a.out executable which you can run by typing
 ```./a.out```
+- To run the game again, simply re-enter ```./a.out```
 
 
 
@@ -44,5 +53,7 @@ All source code is in the ``src/`` directory, which contains:
 
 ```
 - lib/
+  - asteroids.h
+  - asteroids.cpp
 
 ```
