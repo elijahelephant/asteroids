@@ -8,6 +8,7 @@
 int score = 0;
 
 void drawScore() {
+    //implment score
     glColor3f(1.0, 1.0, 1.0);
     glRasterPos2f(-0.9, 0.9);
     std::string scoreText = "Score: " + std::to_string(score);
@@ -17,6 +18,7 @@ void drawScore() {
 }
 
 void display() {
+    //display function
     glClear(GL_COLOR_BUFFER_BIT);
 
     drawPlayer();
@@ -27,6 +29,7 @@ void display() {
 }
 
 void reshape(int width, int height) {
+    //rehsape function to help with window size, helps with keeping stuff on screen.
     glViewport(0, 0, width, height);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -35,6 +38,7 @@ void reshape(int width, int height) {
 }
 
 void keyboard(unsigned char key, int x, int y) {
+    //to escape the game
     switch (key) {
     case 'q':
     case 27: // Escape key
