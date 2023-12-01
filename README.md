@@ -38,7 +38,7 @@ Elijah Williams, Liam Ronarch, Ran Chen, Tyler Canepa
 ## How To Compile And Run
 
 - For linux machines like used in CSIL:
-```g++ main.cpp -lGL -lglut```
+```g++ main.cpp lib/player.cpp lib/game.cpp lib/asteroid.cpp -lGL -lglut```
 - That should create an a.out executable which you can run by typing
 ```./a.out```
 - To run the game again, simply re-enter ```./a.out```
@@ -52,8 +52,13 @@ Elijah Williams, Liam Ronarch, Ran Chen, Tyler Canepa
 All source code is in the ``src/`` directory, which contains:
 
 ```
+- main.cpp
 - lib/
   - asteroids.h
   - asteroids.cpp
+  - game.h
+  - game.cpp
+  - asteroid.cpp
+  - asteroid.h
 
 ```
