@@ -1,5 +1,5 @@
 #define GL_SILENCE_DEPRECATION
-#include <GLUT/glut.h>
+#include <GL/glut.h>
 #include "lib/asteroid.h"
 #include "lib/game.h"
 #include "lib/player.h"

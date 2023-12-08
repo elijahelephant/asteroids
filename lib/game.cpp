@@ -1,7 +1,7 @@
 #include "game.h"
 #include "asteroid.h"
 #include "player.h"
-#include <GLUT/glut.h>
+#include <GL/glut.h>
 #include <iostream>
 #include <cmath>
 #include <vector>
@@ -27,18 +27,19 @@ void drawScore() {
 }
 
 void display() {
+   //this function uses the game state to determine what to do with screen
     glClear(GL_COLOR_BUFFER_BIT);
 
     if (!gameStart) {
         // Display "Press enter to start" message until the game starts
         glColor3f(1.0, 1.0, 1.0);
-        glRasterPos2f(-.4, 0.1); // Position for start message
+        glRasterPos2f(-.4, 0.1);
         std::string title = "Cosmic Blasters: Asteroid Assault";
         for (char c : title) {
             glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
         }
         glColor3f(1.0, 1.0, 1.0);
-        glRasterPos2f(-.25, -0.1); // Position for start message
+        glRasterPos2f(-.25, -0.1);
         glColor3f(1.0, 1.0, 1.0);
         drawText(-0.6, -0.15, "Press 'Enter' then enter your name using the keyboard.");
         drawText(-.10, -0.2775, playerNameInput);
@@ -52,13 +53,13 @@ void display() {
 
         // Game over message and quit instruction
         glColor3f(1.0, 1.0, 1.0);
-        glRasterPos2f(-0.5, 0.1); // Position for game over text
+        glRasterPos2f(-0.5, 0.1);
         std::string gameOverText = "Game Over! Your score was: " + std::to_string(finalScore);
         for (char c : gameOverText) {
             glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
         }
 
-        glRasterPos2f(-0.5, 0.0); // Position for "Press esc to quit game" text
+        glRasterPos2f(-0.5, 0.0);
         std::string quitText = "Press esc to quit game";
         for (char c : quitText) {
             glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
@@ -66,7 +67,7 @@ void display() {
         displayLeaderboard();
 
     } else {
-        // Your regular game drawing logic when not game over
+        //regular game drawing logic when not game over
         drawPlayer();
         drawAsteroids();
         drawScore();
@@ -124,7 +125,7 @@ void gameOverScreen(int score) {
 }
 
 void updateLeaderboard(int score) {
-    // Only update leaderboard if a name has been entered
+    //update leaderboard if a name has been entered
     if (!playerNameInput.empty()) {
         // Check if the player's name is already in the leaderboard
         auto it = std::find_if(leaderboard.begin(), leaderboard.end(),
@@ -136,23 +137,23 @@ void updateLeaderboard(int score) {
             // Update the existing entry if the new score is higher
             if (score > it->score) {
                 it->score = score;
-                // Resort the leaderboard after updating the score
+                // Resort
                 std::sort(leaderboard.begin(), leaderboard.end(),
                           [](const PlayerScore& a, const PlayerScore& b) {
                               return a.score > b.score;
                           });
             }
         } else {
-            // Add a new entry if the player's name is not in the leaderboard
+            // Add a new entry
             leaderboard.emplace_back(playerNameInput, score);
 
-            // Resort the leaderboard after adding the new entry
+            // Resort the leaderboard
             std::sort(leaderboard.begin(), leaderboard.end(),
                       [](const PlayerScore& a, const PlayerScore& b) {
                           return a.score > b.score;
                       });
 
-            // Ensure the leaderboard has at most 5 entries
+            // max size 5
             if (leaderboard.size() > 5) {
                 leaderboard.resize(5);
             }
@@ -161,6 +162,7 @@ void updateLeaderboard(int score) {
 }
 
 void loadLeaderboard() {
+    //loads from our leaderboard file
     leaderboard.clear();
 
     std::ifstream leaderboardFile(leaderboardFilePath);
@@ -178,6 +180,7 @@ void loadLeaderboard() {
 }
 
 void saveLeaderboard() {
+    //saves scores to leaderboard file
     std::ofstream leaderboardFile(leaderboardFilePath);
 
     for (const auto& entry : leaderboard) {
@@ -188,6 +191,7 @@ void saveLeaderboard() {
 }
 
 void displayLeaderboard() {
+    //function to display our leaderbaord
     loadLeaderboard();
 
     glColor3f(1.0, 1.0, 1.0);

@@ -1,6 +1,7 @@
 #include "player.h"
-#include <GLUT/glut.h>
+#include <GL/glut.h>
 
+//varibales for certain aspect of player
 float playerX = 0.0;
 float playerY = -0.4;
 float playerSpeed = 0.05;
@@ -14,6 +15,7 @@ float bulletActive = false;
 float bulletSpeed = 0.1;
 
 void drawPlayer() {
+    //draws the rocket ship on screen
     glColor3f(1.0, 1.0, 1.0);
 
     glBegin(GL_POLYGON);

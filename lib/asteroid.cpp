@@ -1,7 +1,7 @@
 #include "asteroid.h"
 #include "player.h"
 #include "game.h"
-#include <GLUT/glut.h>
+#include <GL/glut.h>
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
@@ -13,6 +13,7 @@ bool gameStart = false;
 
 
 void drawAsteroidCircle(float centerX, float centerY, float radius, int numPoints, float bumpiness) {
+    //simple function to draw circle
     glBegin(GL_POLYGON);
     for (int i = 0; i < numPoints; ++i) {
         float angle = 2.0 * 3.141592 * i / numPoints;
@@ -24,6 +25,7 @@ void drawAsteroidCircle(float centerX, float centerY, float radius, int numPoint
 }
 
 void drawAsteroids() {
+    //create asteroids here
     glColor3f(0.4, 0.4, 0.4);
     for (const auto& asteroid : asteroids) {
         if (asteroid.isActive == true) {
@@ -50,7 +52,9 @@ void drawAsteroids() {
 }
 
 void updateAsteroids(int value) {
+    //keep track of game state, collision and asteroid destruction
     if (gameStart && !gameOver) {
+        //game is active
         score += 1;
         for (auto& asteroid : asteroids) {
             asteroid.y -= asteroid.speed;
@@ -66,17 +70,16 @@ void updateAsteroids(int value) {
                 bulletActive = false;
             }
             if ((std::sqrt(std::pow(asteroid.x - playerX, 2) + std::pow(asteroid.y - playerY, 2)) < asteroidRadius + 0.03) && asteroid.isActive == true) {
+                //collision, game over
                 gameOver = true;
                 finalScore = score;
-                // Additional game-over actions (resetting flags, stopping gameplay, etc.)
-                // ...
             }
         }
         updateBullet();
         glutPostRedisplay();
         glutTimerFunc(16, updateAsteroids, 0);
     } else {
-        glutPostRedisplay(); // To trigger the display function in case of any changes
+        glutPostRedisplay(); 
         glutTimerFunc(100, updateAsteroids, 0); // Call updateAsteroids after a delay
     }
 }
