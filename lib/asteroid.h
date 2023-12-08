@@ -4,10 +4,14 @@
 
 #include <vector>
 
+extern bool gameOver;
+extern bool gameStart;
+
 struct Asteroid {
     float x;
     float y;
     float speed;
+    bool isActive;
 };
 
 
