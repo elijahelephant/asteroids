@@ -54,6 +54,7 @@ All source code is in the ``src/`` directory, which contains:
 ```
 - main.cpp
 - lib/
+  - highscore.txt
   - asteroids.h
   - asteroids.cpp
   - game.h
