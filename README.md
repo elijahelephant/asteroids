@@ -37,7 +37,7 @@ Elijah Williams, Liam Ronarch, Ran Chen, Tyler Canepa
 
 ## How To Compile And Run
 
-- For linux machines like used in CSIL:
+- For linux machines like used in CSIL (we do not know if our Makefile will work on other machines, sorry Shinda):
 ```g++ main.cpp lib/player.cpp lib/game.cpp lib/asteroid.cpp -lGL -lglut```
 - That should create an a.out executable which you can run by typing
 ```./a.out```
