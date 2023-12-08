@@ -23,7 +23,7 @@ int main(int argc, char** argv) {
 
     // Initialize asteroids
     srand(time(nullptr));
-    for (int i = 0; i < 10; ++i) {
+    for (int i = 0; i < 3; ++i) {
         Asteroid asteroid;
         asteroid.x = static_cast<float>(rand()) / RAND_MAX * 2 - 1;
         asteroid.y = 1.0;

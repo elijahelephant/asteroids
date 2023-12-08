@@ -56,6 +56,14 @@ void updateAsteroids(int value) {
     if (gameStart && !gameOver) {
         //game is active
         score += 1;
+        if(score % 250 == 0){
+            Asteroid asteroid;
+            asteroid.x = static_cast<float>(rand()) / RAND_MAX * 2 - 1;
+            asteroid.y = 1.0;
+            asteroid.speed = static_cast<float>(rand()) / RAND_MAX * 0.02 + 0.01;
+            asteroid.isActive = true;
+            asteroids.push_back(asteroid);
+        }
         for (auto& asteroid : asteroids) {
             asteroid.y -= asteroid.speed;
             if (asteroid.y < -1.0) {
