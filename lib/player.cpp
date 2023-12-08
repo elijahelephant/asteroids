@@ -1,7 +1,7 @@
 #include "player.h"
 #include <GL/glut.h>
 
-//initial positions
+//varibales for certain aspect of player
 float playerX = 0.0;
 float playerY = -0.4;
 float playerSpeed = 0.05;
@@ -9,8 +9,13 @@ float playerSpeed = 0.05;
 float playerDirectionX = 0.0;
 float playerDirectionY = 1.0;
 
+float bulletX;
+float bulletY;
+float bulletActive = false;
+float bulletSpeed = 0.1;
+
 void drawPlayer() {
-    //function to color pixels for the ship
+    //draws the rocket ship on screen
     glColor3f(1.0, 1.0, 1.0);
 
     glBegin(GL_POLYGON);
@@ -87,7 +92,6 @@ void drawPlayer() {
 }
 
 void specialKeys(int key, int x, int y) {
-    //function to move the ship
     switch (key) {
     case GLUT_KEY_LEFT:
         playerX -= playerSpeed;
@@ -107,5 +111,32 @@ void specialKeys(int key, int x, int y) {
         break;
     }
 
+
     glutPostRedisplay();
+}
+
+
+void updateBullet() {
+    if (bulletActive) {
+        bulletY += bulletSpeed;
+        if (bulletY > 1) {
+            bulletActive = false;
+        }
+    }
+}
+
+void fireBullet() {
+    bulletX = playerX;
+    bulletY = playerY + 0.1;
+    bulletActive = true;
+}
+
+void drawBullet() {
+    if(bulletActive){
+        glColor3f(1.0, 1.0, 0.0);
+        glPointSize(10);
+        glBegin(GL_POINTS);
+        glVertex2f(bulletX, bulletY);
+        glEnd();
+    }
 }
