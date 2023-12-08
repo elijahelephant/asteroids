@@ -25,6 +25,8 @@ Elijah Williams, Liam Ronarch, Ran Chen, Tyler Canepa
 ## How It Works And What It Is
 
 - This is our own version of the popular game asteroids. Press left, right, up, and down arrows to avoid falling asteroids in order to get the highest score. If you collide with an asteroid your game will end.
+- Shooting: Press space bar to shoot at the asteoirds, one bullet will kill them, but you cannot spam the shooting in order to make it harder.
+- Press ``Enter`` then enter your name and then press ``Enter`` again. Then press ``esc`` to leave the game.
 
 ### How It Works
 - Ship is created in our ``drawPlayer()`` function
