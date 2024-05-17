@@ -1,5 +1,4 @@
-# arcade-cs32
-CS 32 Scrypt Project
+#Asteroids
 
 Elijah Williams, Liam Ronarch, Ran Chen, Tyler Canepa
 
