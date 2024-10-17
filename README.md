@@ -1,25 +1,4 @@
-#Asteroids
-
-Elijah Williams, Liam Ronarch, Ran Chen, Tyler Canepa
-
-## Coding Style
-
-### Naming Conventions
-
-- Function names: camelCase (example: ``getString``)
-- Variable names: all lowercase; underscores for spaces (example: ``num_points``)
-- Object names: first letter of each word is capitalized (example: ``MasterToken``)
-- Constants: all caps; underscores for spaces (example: ``const int MAX_PTS = 100;``)
-- Enumerations: same as a constant, but with a prefix (example: ``enum TokenType {TKN_PARENTH, TKN_OPER};``)
-
-### Spacing
-
-- 1 indent = 4 spaces
-- Space between loop and condition (example: ``if (x == 1)``)
-- No space between function name and arguments (example: ``getString(int& i);``)
-- Spaces around operators (example: ``i += 4;``)
-- Opening brackets for functions go on the same line (example: ``void printItems() {``)
-- Space between closing parenthesis ``)`` and opening bracket ``{`` (example: ``void printItems() {``, not ``void printItems(){``)
+# Asteroids
 
 ## How It Works And What It Is
 
